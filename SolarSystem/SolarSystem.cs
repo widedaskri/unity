@@ -15,22 +15,22 @@ public class SolarSystem : MonoBehaviour
 
     void Update()
     {
-        // ✅ Rotation du Soleil sur lui-même
+        //  Rotation du Soleil sur lui-même
         soleil.transform.Rotate(Vector3.up * vitesseRotationSoleil * Time.deltaTime, Space.Self);
 
-        // ✅ Orbite de la Terre autour du Soleil
+        //  Orbite de la Terre autour du Soleil
         terre.transform.RotateAround(soleil.transform.position, Vector3.up, vitesseOrbitTerre * Time.deltaTime);
         
-        // ✅ La Terre regarde le Soleil
+        //  La Terre regarde le Soleil
         terre.transform.LookAt(soleil.transform);
 
-        // ✅ Rotation de la Terre sur elle-même
+        //  Rotation de la Terre sur elle-même
         terre.transform.GetChild(0).transform.Rotate(Vector3.up * vitesseRotationTerre * Time.deltaTime, Space.Self);
 
-        // ✅ Orbite de la Lune autour de la Terre
+        //  Orbite de la Lune autour de la Terre
         lune.transform.RotateAround(terre.transform.position, Vector3.up, vitesseOrbitLune * Time.deltaTime);
         
-        // ✅ La Lune regarde la Terre
+        //  La Lune regarde la Terre
         lune.transform.LookAt(terre.transform);
     }
 }
